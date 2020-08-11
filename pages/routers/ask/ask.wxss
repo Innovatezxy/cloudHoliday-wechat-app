@@ -1,0 +1,389 @@
+Page{
+  width: 100%;
+  background: #fff;
+}
+
+.navbar-bg{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 97;
+  background: #5297f7;
+}
+.navbar-title{
+  width: 100%;
+  height: 46rpx;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 98;
+  color: #fff;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.navbar{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  position: fixed;
+  left: 0;
+  z-index: 999;
+}
+.back{
+  width: 38rpx;
+  height: 38rpx;
+}
+.home{
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.top{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #5297f7;
+  position: fixed;
+}
+.top .title{
+  width: 25%;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 20rpx auto;
+}
+.top .picker{
+  width: 37.5%;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 20rpx auto;
+}
+
+.list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+.items{
+  width: 90%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  margin: 0 auto;
+  border-radius: 25rpx;
+  border: solid 2rpx #e9e9e9;
+}
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx 0;
+  justify-content: space-between;
+}
+.left{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.id_icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin: auto 10rpx auto 35rpx;
+}
+.id{
+  color: #000;
+  font-size: 32rpx;
+  margin: auto 5rpx;
+}
+.right{
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
+  margin-right: 30rpx;
+}
+.line{
+  width: 93%;
+  background: #e9e9e9;
+  height: 3rpx;
+  margin: 5rpx auto;
+}
+.body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.open_close{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #8a8a8a;
+  font-size: 28rpx;
+  padding: 8rpx auto;
+  margin: 5rpx auto 15rpx;
+}
+.open_close image{
+  width: 35rpx;
+  height: 35rpx;
+  margin: auto 8rpx;
+}
+.info{
+  color: #555555;
+  font-size: 28rpx;
+  margin: 10rpx 15rpx 10rpx 35rpx;
+}
+.reason_img{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 15rpx 0;
+}
+.reason_img .info{
+  color: #555555;
+  font-size: 28rpx;
+  margin: 10rpx 15rpx 10rpx 35rpx;
+}
+.reason_img image{
+  width: 250rpx;
+  border-radius: 15rpx;
+}
+.function{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 15rpx auto;
+}
+.function_btn{
+  color: #88acdf;
+  font-size: 25rpx;
+  padding: 8rpx 15rpx;
+  border: solid 2rpx #99bdee;
+  border-radius: 30rpx;
+  margin: 10rpx 15rpx;
+}
+
+.none{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 42% auto;
+}
+.none image{
+  width: 60%;
+  margin: 15rpx auto;
+}
+.none text{
+  color: #8a8a8a;
+  margin-top: -60rpx;
+}
+
+/* 搜索领导 */
+.input{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.495);
+  display: flex;
+  z-index: 99;
+}
+.input-body{
+  width: 100%;
+  height: auto;
+  background: #f4f4f7;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.input .title{
+  width: 100%;
+  color: #000;
+  font-size: 40rpx;
+  text-align: center;
+  margin: 30rpx auto 20rpx;
+}
+.input input{
+  color: #646464;
+  background: #f4f4f7;
+  width: 80%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 17rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  margin: 25rpx auto;
+  border-color: #b9b9b9;
+}
+.button{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20rpx auto 40rpx;
+}
+.button .cancel{
+  width: 40%;
+  line-height: 60rpx;
+  padding: 15rpx;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+  border: solid 2rpx #f4f4f7;
+}
+.button .confirm{
+  width: 40%;
+  line-height: 60rpx;
+  padding: 15rpx;
+  text-align: center;
+  color: #fff;
+  background: #5297f7;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+}
+
+/*搜索结果展示*/
+.search{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  justify-content: space-around;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.tips{
+  width: 90%;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+  position: fixed;
+  bottom: 850rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.tips text{
+  color: #dc143c;
+  font-size: 32rpx;
+}
+.search-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 500rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 95rpx;
+  border-top-left-radius: 25rpx;
+  border-top-right-radius: 25rpx;
+  transform: translateY(1%);
+  transition: all 1s ease;
+  -webkit-transform: translateY(1%);
+  -webkit-transition: all 1s ease;
+}
+.search-items{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.search-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.search-item text{
+  color: #000;
+  font-size: 30rpx;
+}
+.search-academy{
+  width: 50%;
+  margin: auto 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-name{
+  width:20%;
+  margin: auto 10rpx;
+}
+.search-gender{
+  width: 10%;
+  margin: auto 10rpx;
+}
+.search_confirm{
+  color: #fff;
+  width: 90rpx;
+  background: #5297f7;
+  padding: 10rpx 5rpx;
+  margin: 20rpx;
+  border-radius: 15rpx;
+}
+.search-line{
+  width: 100%;
+  height: 2rpx;
+  background: #f4f4f7;
+  margin: 5rpx 0;
+}
+.search_cancel{
+  width: 100%;
+  color: #5297f7;
+  background: #f0f0f0;
+  font-size: 32rpx;
+  text-align: center;
+  position: fixed;
+  padding: 35rpx 0;
+  bottom: 0;
+}
+
+/* 一键审批 */
+.onekey{
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 75rpx;
+  justify-content: center;
+}
+.onekey_body{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0;
+  text-align: center;
+  background: #09a504;
+  border-radius: 70rpx;
+}
+.onekey .title{
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.onekey .stu_num{
+  color: #fff;
+  font-size: 25rpx;
+}

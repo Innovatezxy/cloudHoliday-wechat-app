@@ -1,0 +1,28 @@
+<!--NavigatorBar-->
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>云假</view>
+<view class="navbar" style='top: {{navH}}px'>
+  <view class="nologin" bindtap="noLogin">随便看看</view>
+</view>
+
+<view class="container" style="margin-top: {{navH + 46}}px">
+  <view class="wellcome">欢迎</view>
+  <view class="wellcome-content">云端请假，请登录或注册新用户</view>
+  <view class="body_bg">
+    <image mode="widthFix" src="https://www.enjfun.com/img/cloudholiday/material/wellcome_bg.jpg"></image>
+  </view>
+  <view class="button">
+    <view class="register" bindtap="register">
+      <button open-type="getUserInfo">注册</button>
+    </view>
+    <view class="login" bindtap="login">
+      <button open-type="getUserInfo">登录</button>
+    </view>
+  </view>
+  <view class="agreement">
+    <text class="normal">注册、登录表示同意</text>
+    <navigator class="blue" url='/pages/routers/protocol/protocol?user_agreement=true'>用户协议、</navigator>
+    <navigator class="blue" url='/pages/routers/protocol/protocol?privacy=true'>隐私条款</navigator>
+  </view>
+  <text class="copyright">Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+</view>

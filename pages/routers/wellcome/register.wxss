@@ -1,0 +1,175 @@
+Page{
+  width: 100%;
+  background: #fff;
+}
+.title{
+  width: 100%;
+  color: #000;
+  font-size: 50rpx;
+  margin: 40rpx 0 0 5%;
+}
+.form{
+  width: 90%;
+  margin: 20rpx auto;
+}
+.items{
+  width: 100%;
+  display: flex;
+  margin: 25rpx auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item{
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+}
+.name{
+  width: 20%;
+  color: #000;
+  font-size: 32rpx;
+  margin: auto 0;
+}
+.items input{
+  color: #8a8a8a;
+  background: #fff;
+  width: 75%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 17rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+}
+.picker{
+  width: 75%;
+  line-height: 60rpx;
+  color: #8a8a8a;
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 10rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+}
+.smscode{
+  background: #fff;
+  width: 35%;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 9rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+}
+/** 用户协议及Copyright **/
+.agreement{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx auto;
+  justify-content: center;
+  font-size: 25rpx;
+}
+.agreement .normal{
+  color: #000;
+}
+.agreement .blue{
+  color: #296aca;
+}
+.submit{
+  width: 90%;
+  color: #fff;
+  background: #5297f7;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 14rpx 0;
+  border-radius: 15rpx;
+  margin: 20rpx auto;
+}
+.copyright{
+  width: 100%;
+  color: #000;
+  font-size: 22rpx;
+  position: absolute;
+  bottom: 35rpx;
+  text-align: center;
+}
+
+/* 教师注册身份验证 */
+.check{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.495);
+  display: flex;
+  z-index: 99;
+}
+.check-body{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.check .title{
+  width: 100%;
+  color: #000;
+  font-size: 40rpx;
+  text-align: center;
+  margin: 30rpx auto 20rpx;
+}
+.check input{
+  color: #8a8a8a;
+  background: #fff;
+  width: 80%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 17rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  margin: 25rpx auto;
+  border-color: #dadada;
+}
+.button{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20rpx auto 40rpx;
+}
+.cancel{
+  width: 40%;
+  line-height: 60rpx;
+  padding: 15rpx;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+}
+.confirm{
+  width: 40%;
+  line-height: 60rpx;
+  padding: 15rpx;
+  text-align: center;
+  color: #fff;
+  background: #5297f7;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+}

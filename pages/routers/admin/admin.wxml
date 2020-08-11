@@ -1,0 +1,16 @@
+<navbar page-name="管理"></navbar>
+<view class="container"  style='margin-top: {{navH + 46}}px'>
+  <text class="title">假期往返统计设置</text>
+  <view class="line"></view>
+  <view class="items">
+    <text class="name">是否开启</text>
+    <switch class="switch" checked="{{isholiday}}" bindchange="isholidayChange" />
+  </view>
+  <view class="line"></view>
+  <view class="items">
+    <text class="name">节假日名称</text>
+    <input type="text" bindinput="festivalInput" placeholder="当前状态：{{current_festival}}" />
+  </view>
+  <view class="line"></view>
+  <button class="button" bindtap="save">保存设置</button>
+</view>

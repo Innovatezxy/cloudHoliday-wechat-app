@@ -1,0 +1,14 @@
+<navbar page-name="关于云假"></navbar>
+<view class="container" style='margin-top: {{navH + 46}}px'>
+  <view class="about">
+    <image class="logo" src="/images/logo.png"></image>
+    <text class="abouttitle">i云假-你的云端请假助手</text>
+    <view class="abouttext">
+      <text class="content">“i云假”隶属于享趣工作室旗下产品，是一款多端综合请假管理平台，替代了传统跑腿请假的情形。学生，教师随时随地均可提交或是审批假单，云假以短信形式传达假单进度，防止您错过通知。同时假单支持类别筛选，让您对请假信息一目了然。教师端的一键审批功能解决了繁琐的逐个审批问题。多端的机构分化，更有利的保护您的隐私信息……</text>
+      <text class="content">更多功能，敬请期待……</text>
+    </view>
+    <view class="copyright" style="width: 100%;color: #a1a1a1;font-size: 22rpx;text-align: center;position: absolute;bottom: 30rpx;">
+      <text>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,245 @@
+<!--NavigatorBar-->
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>云假</view>
+<view class="navbar" style='top: {{navH + 4}}px'>
+</view>
+<view class="container" style='margin-top: {{navH + 46}}px'>
+  <view class="top" style="width: 100%; height: 370rpx;">
+    <image src="/images/home_header_bg.jpg"></image>
+  </view>
+  <view class="header" style="margin: -350rpx auto 20rpx; width: 100%; height: 350rpx;">
+    <navigator class="login_status" bindtap="{{login}}" wx:if="{{login_status == true}}" url="/pages/routers/wellcome/wellcome">登录云假,体验完整功能</navigator>
+    <view class="user" wx:else>
+      <!-- 滚动通知栏 -->
+      <view class="swiper">
+        <swiper class="services-swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+          <block wx:for="{{msgList}}" wx:key="text">
+            <swiper-item class="swiper-item">
+              <image src="/images/roll_notice.png" mode="widthFix"></image>
+              <view class="swiper-text">{{item.content}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="current" wx:if="{{userInfo.type == 'l'}}">
+        <navigator url="/pages/routers/ask/ask" wx:if="{{l_current_number != 0}}">您有 {{l_current_number}} 项审批待处理，点击查看</navigator>
+        <view wx:else>暂无需要审批的请假</view>
+      </view>
+      <view class="current" wx:if="{{userInfo.type == 'b' || userInfo.type == 'j'}}">
+        <navigator url="/pages/routers/ask/ask" wx:if="{{b_current_number != 0}}">您有 {{b_current_number}} 项审批待处理，点击查看</navigator>
+        <view wx:else>暂无需要审批的请假</view>
+      </view>
+      <view class="current" wx:if="{{userInfo.type == 'r'}}">
+        <navigator url="/pages/routers/ask/ask">点击查看学生请假详情</navigator>
+      </view>
+      <view class="current" wx:if="{{userInfo.type == 's'}}">
+        <navigator url="/pages/routers/ask/ask" wx:if="{{s_current_number != 0}}">您有 {{s_current_number}} 项进行中的请假，点击查看</navigator>
+        <view wx:else>暂无进行中的请假</view>
+      </view>
+      <view class="user_info">
+        <text>姓名：{{userInfo.name}}</text>
+        <text wx:if="{{userInfo.type == 'l'}}">审批数量：{{l_number}}</text>
+        <text wx:if="{{userInfo.type == 'b' || userInfo.type == 'j'}}">审批数量：{{b_number}}</text>
+        <text wx:if="{{userInfo.type == 'r'}}">批阅数量：{{r_number}}</text>
+        <text wx:if="{{userInfo.type == 's'}}">请假数量：{{s_number}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="body" wx:if="{{login_status == false}}">
+    <view class="application" wx:if="{{userInfo.type == 's'}}">
+      <view class="title">填写假单</view>
+      <view class="form">
+        <view class="items">
+          <view class="name">请假类型</view>
+          <picker class="picker" bindchange="typePicker" value="{{typeIndex}}" range="{{typePick}}">{{typePick[typeIndex]}}</picker>
+        </view>
+        <view class="items" wx:if="{{course_status == true}}">
+          <view class="name">课程名</view>
+          <input type="text" bindinput="remarkInput" placeholder=" " />
+        </view>
+        <view class="items" wx:if="{{destination_status == true}}">
+          <view class="name">目的地</view>
+          <input type="text" bindinput="remarkInput" placeholder=" " />
+        </view>
+        <view class="items">
+          <view class="name">开始时间</view>
+          <pickerYMDHM placeholder="{{placeholder}}" date="{{start_time}}" bind:onPickerChange="startPickerChange" startDate="{{startDate}}" endDate="{{endDate}}">
+          </pickerYMDHM>
+        </view>
+        <view class="items">
+          <view class="name">结束时间</view>
+          <pickerYMDHM placeholder="{{placeholder}}" date="{{end_time}}" bind:onPickerChange="endPickerChange" startDate="{{startDate}}" endDate="{{endDate}}">
+          </pickerYMDHM>
+        </view>
+        <view class="items">
+          <view class="name">班主任</view>
+          <input type="text" value="{{b_name}}" bindinput="bteacherInput" placeholder="搜索姓名" confirm-type="search" adjust-position="false" bindconfirm="searchB" />
+        </view>
+        <view class="items" wx:if="{{course_status == true}}">
+          <view class="name">任课教师</view>
+          <input type="text" value="{{r_name}}" bindinput="rteacherInput" placeholder="搜索姓名" confirm-type="search" adjust-position="false" bindconfirm="searchR" />
+        </view>
+        <view class="items">
+          <view class="name">请假原因</view>
+          <input type="text" bindinput="reasonInput" placeholder=" " />
+        </view>
+        <view class="items" wx:if="{{upload_status == true}}">
+          <view class="name">凭证图片（可选）</view>
+          <view class="item">
+            <view class="reason_img">
+              <image class="cer_icon" src="/images/add_img.png" bindtap="uploadImg" wx:if="{{isUpload == false}}"></image>
+              <block wx:else>
+                <image class="cer_img" src="{{imgUrl}}" bindtap="previewImg" mode="widthFix"></image>
+                <image class="delete_icon" src="/images/delete.png" bindtap="deleteImg"></image>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button class="submit" bindtap="askSubmit">提交</button>
+    </view>
+  </view>
+
+  <view class="body" wx:if="{{login_status == false}}">
+    <view class="title" wx:if="{{userInfo.type == 'b' || userInfo.type == 'j'}}">近十条记录</view>
+    <view class="list" wx:for="{{askInfoBoth}}" wx:key="ask" wx:if="{{userInfo.type == 'b' || userInfo.type == 'j'}}">
+      <view class="items">
+        <view class="header">
+          <view class="left">
+            <image class="id_icon" src="/images/id_icon.png"></image>
+            <text class="id">ID:{{item.id}}</text>
+          </view>
+          <view class="right" style="background: #ff8724;" wx:if="{{ item.b_result == 'none'}}">待审批</view>
+          <view class="right" style="background: #12ac1f;" wx:if="{{item.b_result == 'yes'}}">已同意</view>
+          <view class="right" style="background: #e90a0a;" wx:if="{{item.b_result == 'no'}}">已拒绝</view>
+        </view>
+        <view class="line"></view>
+        <view class="body">
+          <view class="info">
+            <text wx:if="{{item.type == 'c'}}">请假类型：课程假</text>
+            <text wx:if="{{item.type == 'd'}}">请假类型：日常假</text>
+          </view>
+          <text class="info">学生姓名：{{item.name}}</text>
+          <text class="info">请假原因：{{item.reason}}</text>
+          <text class="info">申请时间：{{item.create_time}}</text>
+          <text class="info">院系班级：{{item.academy}} {{item.class}}</text>
+          <text class="info">请假期限：{{item.start}} 至 {{item.end}}</text>
+          <view class="detail" bindtap="detail">
+            <text>查看详情>></text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="body" wx:if="{{login_status == false}}">
+      <view class="title" wx:if="{{userInfo.type == 'r'}}">近十条记录</view>
+      <view class="list" wx:for="{{askInfoR}}" wx:key="ask" wx:if="{{userInfo.type == 'r'}}">
+        <view class="items">
+          <view class="header">
+            <view class="left">
+              <image class="id_icon" src="/images/id_icon.png"></image>
+              <text class="id">ID:{{item.id}}</text>
+            </view>
+            <view class="right" style="background: #12ac1f;">已审批</view>
+          </view>
+          <view class="line"></view>
+          <view class="body">
+            <text class="info">请假类型：课程假</text>
+            <text class="info">请假课程：{{item.remark}}</text>
+            <text class="info">学生姓名：{{item.name}}</text>
+            <text class="info">学号：{{item.stuid}}</text>
+            <text class="info">院系班级：{{item.academy}} {{item.class}}</text>
+            <text class="info">请假期限：{{item.start}} 至 {{item.end}}</text>
+            <view class="detail" bindtap="detail">
+              <text>查看详情>></text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="body" wx:if="{{login_status == false}}">
+        <view class="title" wx:if="{{userInfo.type == 'l'}}">近十条记录</view>
+        <view class="list" wx:for="{{askInfoL}}" wx:key="ask" wx:if="{{userInfo.type == 'l'}}">
+          <view class="items">
+            <view class="header">
+              <view class="left">
+                <image class="id_icon" src="/images/id_icon.png"></image>
+                <text class="id">ID:{{item.id}}</text>
+              </view>
+              <view class="right" style="background: #ff8724;" wx:if="{{ item.l_result == 'none'}}">待审批</view>
+              <view class="right" style="background: #12ac1f;" wx:if="{{item.l_result == 'yes'}}">已同意</view>
+              <view class="right" style="background: #e90a0a;" wx:if="{{item.l_result == 'no'}}">已拒绝</view>
+            </view>
+            <view class="line"></view>
+            <view class="body">
+              <view class="info">
+                <text wx:if="{{item.type == 'c'}}">请假类型：课程假</text>
+                <text wx:if="{{item.type == 'd'}}">请假类型：日常假</text>
+              </view>
+              <text class="info">学生姓名：{{item.name}}</text>
+              <text class="info">请假原因：{{item.reason}}</text>
+
+              <text class="info">申请时间：{{item.create_time}}</text>
+              <text class="info">院系班级：{{item.academy}} {{item.class}}</text>
+              <text class="info">请假期限：{{item.start}} 至 {{item.end}}</text>
+              <view class="detail" bindtap="detail">
+                <text>查看详情>></text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="none" wx:if="{{(userInfo.type == 'b' || userInfo.type == 'j' || userInfo.type == 'l') && lengthBoth == 0}}">
+          <image src="https://www.enjfun.com/img/cloudholiday/material/none.gif" mode="widthFix"></image>
+          <text>空空如也，暂无记录</text>
+        </view>
+
+        <view class="none" wx:if="{{userInfo.type == 'r' && lengthR == 0}}">
+          <image src="https://www.enjfun.com/img/cloudholiday/material/none.gif" mode="widthFix"></image>
+          <text>空空如也，暂无记录</text>
+        </view>
+
+        <view class="copyright" style="width: 100%;color: #a1a1a1;font-size: 22rpx;text-align: center;position: fixed;bottom: 11rpx;" wx:if="{{((userInfo.type == 'b' || userInfo.type == 'j' || userInfo.type == 'l') && lengthBoth == 0) || (userInfo.type == 'r' && lengthR == 0)}}">Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</view>
+        <view class="copyright" style="width: 100%;color: #a1a1a1;font-size: 22rpx;text-align: center;margin: 20rpx auto;" wx:else>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</view>
+      </view>
+
+      <!-- 搜索教师 -->
+      <view class="search" wx:if="{{search_status == true}}">
+        <scroll-view scroll-y class="search-body">
+          <view class="search-items" wx:for="{{searchInfo}}" wx:key="search">
+            <view class="search-item">
+              <text class="search-name">{{item.name}}</text>
+              <text class="search-gender">{{item.male}}</text>
+              <text class="search-academy">{{item.academy}}</text>
+              <view class="search_confirm" data-name="{{item.name}}" data-openid="{{item.openid}}" data-phone="{{item.phone}}" bindtap="searchConfirm">确定</view>
+            </view>
+            <view class="search-line"></view>
+          </view>
+        </scroll-view>
+        <view class="search_cancel" bindtap="searchCancel">取消</view>
+      </view>
+
+      <!-- 人脸认证 -->
+      <view class="faceauth" wx:if="{{faceauth_status == true}}">
+        <view class="tips" style='margin-top: {{navH + 76}}px'>请将面部置入取景框内</view>
+        <view class="main">
+          <camera device-position="front" flash="off" style="width: 500rpx; height: 500rpx;" binderror="error"></camera>
+        </view>
+        <view class="auth-button">
+          <form report-submit="true" bindsubmit="auth" wx:if="{{login_status == false}}">
+            <button form-type="submit" class="auth">请假认证</button>
+          </form>
+          <button class="auth" bindtap="faceauthCancel">暂不认证</button>
+        </view>
+        <view class="fun">
+          <view class="fun-body">
+            <view>性别：{{sex}}</view>
+            <view>年龄：{{age}}</view>
+            <view>情绪：{{emotion}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

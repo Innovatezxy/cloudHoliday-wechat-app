@@ -1,0 +1,38 @@
+/* components/navbar/index.wxss */
+.navbar-bg{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 997;
+  background: #5297f7;
+}
+.navbar-title{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  color: #fff;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.navbar{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  position: fixed;
+  left: 0;
+  z-index: 999;
+}
+.back{
+  width: 38rpx;
+  height: 38rpx;
+}
+.home{
+  width: 38rpx;
+  height: 38rpx;
+}

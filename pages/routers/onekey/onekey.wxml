@@ -1,0 +1,74 @@
+<navbar page-name="一键审批"></navbar>
+
+<view class="top" style='top: {{navH + 46}}px'>
+  <view class="title">筛选</view>
+  <picker class="picker" bindchange="asktypePicker" value="{{asktypeIndex}}" range="{{asktypePick}}">{{asktypePick[asktypeIndex]}}</picker>
+  <picker class="picker" bindchange="restypePicker" value="{{restypeIndex}}" range="{{restypePick}}">{{restypePick[restypeIndex]}}</picker>
+</view>
+
+<view class="container" style='margin-top: {{navH + 111}}px'>
+  <view class="list" wx:for="{{onekeyInfo}}" wx:key="ask">
+    <view class="items">
+      <view class="header">
+        <view class="left">
+          <image class="id_icon" src="/images/id_icon.png"></image>
+          <text class="id">ID:{{item.id}}</text>
+        </view>
+        <view class="right" style="background: #ff8724;" wx:if="{{ item.b_result == 'none'}}">待审批</view>
+        <view class="right" style="background: #12ac1f;" wx:if="{{item.b_result == 'yes'}}">已同意</view>
+        <view class="right" style="background: #e90a0a;" wx:if="{{item.b_result == 'no'}}">已拒绝</view>
+      </view>
+      <view class="line"></view>
+      <view class="body">
+        <text class="info">请假类型：{{item.type}}-往返统计</text>
+        <text class="info">假期去向：{{item.remark}}</text>
+        <text class="info">学生姓名：{{item.name}}</text>
+        <text class="info">院系班级：{{item.academy}} {{item.class}}</text>
+        <text class="info">请假期限：{{item.start}} 至 {{item.end}}</text>
+        <view class="open_close" wx:if="{{open == false}}" bindtap="open">
+          <text>展开</text>
+          <image src="/images/open.png"></image>
+        </view>
+        <block wx:if="{{open == true}}">
+          <text class="info">请假原因：{{item.reason}}</text>
+          <text class="info" wx:if="{{item.b_result == 'no'}}">拒绝原因：{{item.b_refuse_reason}}</text>
+          <text class="info">学号：{{item.stuid}}</text>
+          <text class="info">申请时间：{{item.create_time}}</text>
+        </block>
+        <view class="open_close" wx:if="{{open == true}}" bindtap="close">
+          <text>折叠</text>
+          <image src="/images/close.png"></image>
+        </view>
+      </view>
+      <view class="line" wx:if="{{item.b_result == 'none'}}"></view>
+      <view class="function" wx:if="{{item.b_result == 'none'}}">
+        <view class="function_btn" data-phone="{{item.s_phone}}" bindtap="contactS">联系学生</view>
+        <view class="function_btn" data-id="{{item.id}}" bindtap="refuse">拒绝请假</view>
+        <view class="function_btn" data-id="{{item.id}}" bindtap="approve">批准请假</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="onekey" bindtap="onekeyApprove">
+    <view class="onekey_body">
+      <text class="title">一键同意</text>
+      <text class="stu_num">当前有 <text class="stu_num" style="color: #0a2c5c; font-weight: bold;">{{ing_length}}</text> 张假期去向单待审批</text>
+    </view>
+  </view>
+
+  <view class="none" wx:if="{{lengthAll == 0}}">
+    <image src="https://www.enjfun.com/img/cloudholiday/material/none.gif" mode="widthFix"></image>
+    <text>空空如也，暂无记录</text>
+  </view>
+
+  <view class="input" wx:if="{{refuse_view == true}}">
+    <view class="input-body">
+      <view class="title">拒绝原因</view>
+      <input type="text" bindinput="refuseInput" placeholder="必填" />
+      <view class="button">
+        <view class="cancel" bindtap="extraCancel">取消</view>
+        <view class="confirm" bindtap="refuseConfirm">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

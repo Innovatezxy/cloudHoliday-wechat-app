@@ -1,0 +1,31 @@
+<navbar page-name="帮助"></navbar>
+<view class="container" style='margin-top: {{navH + 46}}px'>
+  <view class="help">
+    <text class="question">Q1：为什么不绑定账号无法使用?</text>
+    <text class="answer">A：由于在线申请请假，教师审批等功能需要授权后才能判断用户身份哦。</text>
+    <text class="question">Q2：为什么提示我该用户已注册?</text>
+    <text class="answer">A：云假以您登录的微信生成的唯一标识符作为登录凭证，若您在同一个微信注册后，不可再利用该微信账户注册新的云假账户，若更换设备登录云假，只需登录您注册时使用的微信即可。</text>
+    <text class="question">Q3：为什么学生选择"课程假"类型时必须选择任课教师?</text>
+    <text class="answer">A："课程假"类型在学生请假被班主任或领导审批后将以短信形式通知您的任课教师，以确保任课教师了解您的请假信息后做出相应处理。</text>
+    <text class="question">Q4：为什么有时会出现班主任迟迟不审批我的假单问题?</text>
+    <text class="answer">A：班主任有可能同时兼任课教师，由于正在上课等情况不能及时处理请假，请同学们稍加等待并谅解。</text>
+    <text class="question">Q5：为什么我请假成功后没有收到通知?</text>
+    <text class="answer">A：目前我们以短信形式通知您的请假结果，出现类似情况，可能是由于网络原因造成您的短信下发失败，请直接登录云假查看结果，或者检查您的信息是否被误认为垃圾短信。</text>
+    <text class="question">Q6：为什么学生申请请假后我没有收到通知?</text>
+    <text class="answer">A：目前我们以短信形式通知您审批假单，出现类似情况，可能是由于网络原因造成您的短信下发失败，请直接登录云假查看结果，或者检查您的信息是否被误认为垃圾短信。</text>
+    <text class="question">Q7：为什么任课教师只能查看学生请假成功后的信息?</text>
+    <text class="answer">A：为优化数据结构并保护学生隐私，我们只展示学生将您选为任课教师且审批成功后的学生请假信息。</text>
+    <text class="question">Q8：为什么班主任兼任课教师有时会看到非本班学生的请假信息?</text>
+    <text class="answer">A：由于数据结构庞大造成的功能限制，请您在审批学生请假时多加留意是否为本班学生。</text>
+    <text class="question">Q9：为什么假期往返统计信息在教师端的全部假单里没有显示?</text>
+    <text class="answer">A：由于学生集体请假时请求的数量非常庞大，为避免出现信息过多造成您的错误审批，我们将假期往返统计功能单独呈现，在这里您可以单独审批或是一键审批。</text>
+    <text class="question">Q10：为什么假期往返统计信息没有短信通知?</text>
+    <text class="answer">A：由于请假人数过多及短信通知成本等问题，请您登录云假及时留意审批结果。</text>
+    <text class="question">Q11：为什么学生请假被审批后无法撤销或删除?</text>
+    <text class="answer">A：只有您在提交请假后且在班主任或领导审批之前您有撤销的机会，被审批后您的请假信息将被保存在数据库，以便日后进行统计或作为证据保存。</text>
+    <text class="question">Q12：为什么班主任转达上级后依旧可以进行审批?</text>
+    <text class="answer">A：为优化审批流程，以短信形式转达上级审批或您线下联系领导审批两种方式皆可，这时您也可以在您的终端进行审批。</text>
+    <text class="question">Q13：如果我注册后填写的姓名，性别等信息有误怎么办?</text>
+    <text class="answer">A：目前全身份端支持在线修改手机号，学生端支持修改班级信息，若您的手机号无法使用或更换号码后，只需在我的-账户修改并验证新手机号后即修改成功，若是由于注册误操作造成的其他信息错误请联系院级负责人进行修改。</text>
+  </view>
+</view>

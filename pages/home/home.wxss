@@ -1,0 +1,460 @@
+/** 导航栏 **/
+.navbar-bg {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 997;
+  background: #5297f7;
+}
+
+.navbar-title {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  color: #fff;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+
+.navbar{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  position: fixed;
+  left: 0;
+  z-index: 999;
+}
+
+Page{
+  width: 100%;
+  background: #fff;
+}
+.top{
+  position: relative;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.top image{
+  width: 100%;
+  height: 100%;
+}
+.header{
+  position: relative;
+  z-index: 99;
+}
+.login_status{
+  width: 100%;
+  color: #fff;
+  font-size: 38rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 50rpx auto;
+  text-decoration-line: underline;
+}
+.user{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* 滚动通知栏 */
+.services-swiper{
+  background: #5297f7;
+  height: 40rpx;
+  width: 100%;
+  padding: 15rpx 5rpx;
+  margin: 0 auto 15rpx;
+}
+.swiper-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.swiper-item image{
+  width: 38rpx;
+  margin: auto 0;
+}
+.swiper-text{
+  font-size: 30rpx;
+  color: #fff;
+  margin: auto 0;
+}
+
+.user_info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx auto 20rpx;
+  justify-content: space-around;
+}
+.user_info text{
+  color: #fff;
+  font-size: 32rpx;
+}
+.current{
+  color: #fff;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin: 5rpx auto 20rpx;
+}
+.body{
+  width: 100%;
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 10rpx;
+  position: relative;
+  z-index: 99
+}
+.body .title{
+  width: 100%;
+  color: #808080;
+  text-align: left;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 25rpx auto 35rpx 7.5%;
+}
+
+.form{
+  width: 85%;
+  margin: 20rpx auto;
+}
+.form .items{
+  width: 100%;
+  display: flex;
+  margin: 25rpx auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form .item{
+  width: 70%;
+  display: flex;
+  margin: 25rpx auto;
+  justify-content: flex-start;
+}
+.name{
+  width: 25%;
+  color: #000;
+  font-size: 32rpx;
+  margin: auto 0;
+}
+.items input{
+  color: #8a8a8a;
+  background: #fff;
+  width: 70%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 17rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+}
+.items .picker{
+  width: 70%;
+  line-height: 60rpx;
+  color: #8a8a8a;
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 10rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+}
+.items pickerYMDHM{
+  width: 70%;
+  line-height: 60rpx;
+  color: #8a8a8a;
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 10rpx 0;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+}
+.reason_img{
+  display: flex;
+  flex-direction: row;
+  border-radius: 15rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-color: #dadada;
+  margin-left: 20rpx;
+}
+.cer_icon{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 30rpx;
+}
+.cer_img{
+  width: 300rpx;
+  margin: 30rpx;
+}
+.delete_icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: auto 20rpx;
+}
+.submit{
+  width: 85%;
+  color: #fff;
+  background: #5297f7;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 14rpx 0;
+  border-radius: 15rpx;
+  margin: 20rpx auto;
+}
+.none{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 50rpx auto;
+}
+.none image{
+  width: 60%;
+  margin: 15rpx auto;
+}
+.none text{
+  color: #8a8a8a;
+  margin-top: -60rpx;
+}
+
+/*搜索教师*/
+.search{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  justify-content: space-around;
+  z-index: 900;
+  top: 0;
+  left: 0;
+}
+.search-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 500rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 85rpx;
+  border-top-left-radius: 25rpx;
+  border-top-right-radius: 25rpx;
+  transform: translateY(1%);
+  transition: all 1s ease;
+  -webkit-transform: translateY(1%);
+  -webkit-transition: all 1s ease;
+}
+.search-items{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.search-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.search-item text{
+  color: #000;
+  font-size: 30rpx;
+}
+.search-academy{
+  width: 50%;
+  margin: auto 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-name{
+  width:20%;
+  margin: auto 10rpx;
+}
+.search-gender{
+  width: 10%;
+  margin: auto 10rpx;
+}
+.search_confirm{
+  color: #fff;
+  width: 90rpx;
+  background: #5297f7;
+  padding: 10rpx 5rpx;
+  margin: 20rpx;
+  border-radius: 15rpx;
+}
+.search-line{
+  width: 100%;
+  height: 2rpx;
+  background: #f4f4f7;
+  margin: 5rpx 0;
+}
+.search_cancel{
+  width: 100%;
+  color: #5297f7;
+  background: #f0f0f0;
+  font-size: 32rpx;
+  text-align: center;
+  position: fixed;
+  padding: 25rpx 0;
+  bottom: 0;
+}
+
+/* 结果列表 */
+.list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+.list .items{
+  width: 90%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  margin: 0 auto;
+  border-radius: 25rpx;
+  border: solid 2rpx #e9e9e9;
+}
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx 0;
+  justify-content: space-between;
+}
+.left{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.id_icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin: auto 10rpx auto 35rpx;
+}
+.id{
+  color: #000;
+  font-size: 32rpx;
+  margin: auto 5rpx;
+}
+.right{
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
+  margin-right: 30rpx;
+}
+.line{
+  width: 93%;
+  background: #e9e9e9;
+  height: 3rpx;
+  margin: 5rpx auto;
+}
+.detail{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #8a8a8a;
+  font-size: 28rpx;
+  padding: 8rpx auto;
+  margin: 5rpx auto 15rpx;
+}
+.info{
+  color: #555555;
+  font-size: 28rpx;
+  margin: 10rpx 15rpx 10rpx 35rpx;
+}
+
+/* 人脸认证 */
+.faceauth{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #5297f7;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.tips{
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin: 30rpx auto;
+}
+.main{
+  display: flex;
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50rpx;
+  margin: 60rpx auto;
+}
+.main camera{
+  display: block;
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+.auth-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 35rpx auto;
+}
+.auth{
+  width: 250rpx;
+  color: #5297f7;
+  background: #fff;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 14rpx 25rpx;
+  border-radius: 15rpx;
+  margin: 0 35rpx;
+}
+.fun{
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 25rpx;
+}
+.fun-body{
+  color: #fff;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

@@ -1,0 +1,74 @@
+<navbar page-name="个人信息"></navbar>
+<view class="container" style='margin-top: {{navH + 46}}px'>
+  <view class="info">
+    <view class="useravater">
+      <open-data class="avatar" type="userAvatarUrl" mode="cover"></open-data>
+    </view>
+    <view class="list">
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">姓名</text>
+        <text class="value">{{userInfo.name}}</text>
+      </view>
+      <view class="line" wx:if="{{userInfo.type == 's'}}"></view>
+      <view class="items" wx:if="{{userInfo.type == 's'}}">
+        <text class="name">学号</text>
+        <text class="value">{{userInfo.stuid}}</text>
+      </view>
+      <view class="line" wx:if="{{userInfo.type == 's'}}"></view>
+      <view class="items" wx:if="{{userInfo.type == 's'}}" bindtap="changeClass">
+        <text class="name">班级</text>
+        <text class="value">{{userInfo.class}}</text>
+        <image class="img-b" src="/images/arrow.png"></image>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">学院</text>
+        <text class="value">{{userInfo.academy}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items" bindtap="changePhone">
+        <text class="name">手机号</text>
+        <text class="value">{{userInfo.phone}}</text>
+        <image class="img-b" src="/images/arrow.png"></image>
+      </view>
+      <view class="line"></view>
+    </view>
+    <button class="bind-button" bindtap="login">{{login_status}}</button>
+  </view>
+
+  <view class="input" wx:if="{{class_view == true}}">
+    <view class="input-body">
+      <view class="title">修改班级</view>
+      <view class="items">
+        <view class="name">班级信息</view>
+        <input type="text" bindinput="classInput" placeholder="格式：级数+班级(例:17会计)" />
+      </view>
+      <view class="button">
+        <view class="cancel" bindtap="extraCancel">取消</view>
+        <view class="confirm" bindtap="confirmClass">确定</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="input" wx:if="{{phone_view == true}}">
+    <view class="input-body">
+      <view class="title">更换手机号</view>
+      <view class="items">
+        <view class="name">手机号</view>
+        <input type="number" maxlength="11" bindinput="phoneInput" placeholder=" " />
+      </view>
+      <view class="items">
+        <view class="name">验证码</view>
+        <view class="item">
+          <input type="number" maxlength="6" bindinput="codeInput" placeholder=" " style="width: 65%" />
+          <button class="smscode" disabled="{{code_status}}" style="color: {{code_color}}" bindtap="smsCode">{{code_time}}</button>
+        </view>
+      </view>
+      <view class="button">
+        <view class="cancel" bindtap="extraCancel">取消</view>
+        <view class="confirm" bindtap="confirmPhone">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

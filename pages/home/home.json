@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pickerYMDHM": "/components/pickerYMDHM/pickerYMDHM"
+  },
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

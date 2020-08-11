@@ -1,0 +1,7 @@
+<!--components/navbar/index.wxml-->
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>{{pageName}}</view>
+<view class="navbar" style='top: {{navH + 4}}px'>
+  <image class="back" src="/images/barback.png" style="margin: auto 20rpx;" bindtap="navBack"></image>
+  <image class="home" src="/images/barhome.png" style="margin: auto 20rpx;" bindtap="toHome"></image>
+</view>

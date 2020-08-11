@@ -1,0 +1,33 @@
+/*关于我们*/
+.about{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.abouttext{
+  width: 95vw;
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 25rpx;
+  margin: 45rpx auto 15rpx;
+}
+.abouttitle{
+  color: #000;
+  font-size: 33rpx;
+  font-weight: bold;
+  margin: 15rpx auto 30rpx;
+}
+.about .content{
+  color: #2c2c2c;
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx auto;
+  text-align: left;
+}

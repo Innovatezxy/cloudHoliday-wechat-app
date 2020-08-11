@@ -1,0 +1,38 @@
+Page{
+  width: 100vw;
+  background: #fff;
+}
+.container{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+/*用户协议*/
+.user_agreement{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.user_agreement text{
+  width: 95vw;
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: column;
+}
+.user_agreement .topic{
+  color: #000;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin: 20rpx auto;
+}
+.user_agreement .title{
+  color: #000;
+  font-size: 32rpx;
+  margin: 15rpx auto;
+}
+.user_agreement .content{
+  color: #4b4b4b;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-align: left;
+}

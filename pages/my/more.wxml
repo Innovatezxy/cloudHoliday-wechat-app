@@ -1,0 +1,140 @@
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>我的</view>
+
+<view class="container" style='margin-top: {{navH + 46}}px'>
+  <view class="top">
+    <open-data class="avatar" type="userAvatarUrl" mode="cover"></open-data>
+    <view class="top-items">
+      <view class="name">{{name}}</view>
+      <view class="header">
+        <view class="header-items" wx:if="{{type == 's'}}">
+          <text>{{s_current_number}}</text>
+          <text>进行中</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'b' || type == 'j'}}">
+          <text>{{b_current_number}}</text>
+          <text>待审批</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'l'}}">
+          <text>{{l_current_number}}</text>
+          <text>待审批</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'r'}}">
+          <text>--</text>
+          <text>待批阅</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 's'}}">
+          <text>{{s_access_number}}</text>
+          <text>已通过</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'b' || type == 'j'}}">
+          <text>{{b_access_number}}</text>
+          <text>已审批</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'l'}}">
+          <text>{{l_access_number}}</text>
+          <text>已审批</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'r'}}">
+          <text>--</text>
+          <text>已批阅</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 's'}}">
+          <text>{{s_number}}</text>
+          <text>全部</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'b' || type == 'j'}}">
+          <text>{{b_number}}</text>
+          <text>全部</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'l'}}">
+          <text>{{l_number}}</text>
+          <text>全部</text>
+        </view>
+        <view class="header-items" wx:if="{{type == 'r'}}">
+          <text>{{r_number}}</text>
+          <text>全部</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="waveWrapper waveAnimation">
+    <view class="waveWrapperInner bgTop">
+      <view class="wave waveTop" style="background-image:url('https://www.enjfun.com/img/cloudholiday/material/wave-top.png')"></view>
+    </view>
+    <view class="waveWrapperInner bgMiddle">
+      <view class="wave waveMiddle" style="background-image:url('https://www.enjfun.com/img/cloudholiday/material/wave-mid.png')"></view>
+    </view>
+    <view class="waveWrapperInner bgBottom">
+      <view class="wave waveBottom" style="background-image:url('https://www.enjfun.com/img/cloudholiday/material/wave-bot.png')"></view>
+    </view>
+  </view>
+  <view class="list">
+    <navigator class="items" url='/pages/routers/self/self'>
+      <image class="img-a" src="/images/self_info.png"></image>
+      <text class="text">账户</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="line"></view>
+    <navigator class="items" url='/pages/routers/ask/ask?ing=true' wx:if="{{type == 's'}}">
+      <image class="img-a" src="/images/approve_current.png"></image>
+      <text class="text">进行中</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <navigator class="items" url='/pages/routers/ask/ask?ing=true' wx:if="{{type == 'b' || type == 'j' || type == 'l'}}">
+      <image class="img-a" src="/images/approve_current.png"></image>
+      <text class="text">待审批</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="line" wx:if="{{type != 'r'}}"></view>
+    <navigator class="items" url='/pages/routers/ask/ask?no=true' wx:if="{{type == 's'}}">
+      <image class="img-a" src="/images/approve_refuse.png"></image>
+      <text class="text">未通过</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <navigator class="items" url='/pages/routers/ask/ask?no=true' wx:if="{{type == 'b' || type == 'j' || type == 'l'}}">
+      <image class="img-a" src="/images/approve_refuse.png"></image>
+      <text class="text">已拒绝</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="line" wx:if="{{type != 'r'}}"></view>
+    <navigator class="items" url='/pages/routers/ask/ask?yes=true' wx:if="{{type == 's'}}">
+      <image class="img-a" src="/images/approve_access.png"></image>
+      <text class="text">已通过</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <navigator class="items" url='/pages/routers/ask/ask?yes=true' wx:if="{{type == 'b' || type == 'j' || type == 'l'}}">
+      <image class="img-a" src="/images/approve_access.png"></image>
+      <text class="text">已同意</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="line" wx:if="{{type != 'r'}}"></view>
+    <navigator class="items" url='/pages/routers/ask/ask'>
+      <image class="img-a" src="/images/approve_all.png"></image>
+      <text class="text">全部假单</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="line" wx:if="{{type == 'b' || type == 'j'}}"></view>
+    <navigator class="items" url='/pages/routers/onekey/onekey' wx:if="{{type == 'b' || type == 'j'}}">
+      <image class="img-a" src="/images/approve_onekey.png"></image>
+      <text class="text">一键审批</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="line"></view>
+    <navigator class="items" url='/pages/routers/others/others'>
+      <image class="img-a" src="/images/more.png"></image>
+      <text class="text">关于云假</text>
+      <image class="img-b" src="/images/arrow.png"></image>
+    </navigator>
+    <view class="edge-line"></view>
+  </view>
+  <view class="contact">
+    <button open-type="contact">客服</button>
+  </view>
+  <view class="version">
+    <text>Version 1.0.0</text>
+  </view>
+  <view class="copyright">
+    <text>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+  </view>
+</view>

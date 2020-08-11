@@ -1,0 +1,21 @@
+/*使用帮助*/
+.help{
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20rpx auto;
+}
+.question{
+  color: #5297f7;
+  margin: 10rpx;
+  margin-top: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+}
+.answer{
+  color: #808080;
+  margin: 10rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+}

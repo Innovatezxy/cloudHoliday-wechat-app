@@ -1,0 +1,60 @@
+<navbar page-name="云假"></navbar>
+<view class="container" style="margin-top: {{navH + 46}}px">
+  <text class="title">新用户注册</text>
+  <view class="form">
+    <view class="items">
+      <view class="name">身份类型</view>
+      <picker class="picker" bindchange="typePicker" value="{{typeIndex}}" range="{{typePick}}">{{typePick[typeIndex]}}</picker>
+    </view>
+    <view class="items">
+      <view class="name">姓名</view>
+      <input type="text" bindinput="nameInput" placeholder=" " />
+    </view>
+    <view class="items">
+      <view class="name">性别</view>
+      <picker class="picker" bindchange="genderPicker" value="{{genderIndex}}" range="{{genderPick}}">{{genderPick[genderIndex]}}</picker>
+    </view>
+    <view class="items" wx:if="{{stuid_status == true}}">
+      <view class="name">学号</view>
+      <input type="number" maxlength="11" bindinput="stuidInput" placeholder=" " />
+    </view>
+    <view class="items">
+      <view class="name">学院</view>
+      <picker class="picker" bindchange="academyPicker" value="{{academyIndex}}" range="{{academyPick}}">{{academyPick[academyIndex]}}</picker>
+    </view>
+    <view class="items" wx:if="{{class_status == true}}">
+      <view class="name">班级</view>
+      <input type="text" bindinput="classInput" placeholder="级数+班级" />
+    </view>
+    <view class="items">
+      <view class="name">手机号</view>
+      <input type="number" maxlength="11" bindinput="phoneInput" placeholder=" " />
+    </view>
+    <view class="items">
+      <view class="name">验证码</view>
+      <view class="item">
+        <input type="number" maxlength="6" bindinput="codeInput" placeholder=" " style="width: 65%" />
+        <button class="smscode" disabled="{{code_status}}" style="color: {{code_color}}" bindtap="smsCode">{{code_time}}</button>
+      </view>
+    </view>
+  </view>
+  <view class="agreement">
+    <text class="normal">注册表示同意</text>
+    <navigator class="blue" url='/pages/routers/protocol/protocol?user_agreement=true'>用户协议、</navigator>
+    <navigator class="blue" url='/pages/routers/protocol/protocol?privacy=true'>隐私条款</navigator>
+  </view>
+  <form report-submit="true" bindsubmit="stuSubmit">
+    <button form-type="submit" class="submit">注册</button>
+  </form>
+  <view class="copyright">Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</view>
+</view>
+<view class="check" wx:if="{{check_view == true}}">
+  <view class="check-body">
+    <view class="title">输入密码以验证身份</view>
+    <input type="number" maxlength="9" bindinput="checkInput" placeholder="密码" />
+    <view class="button">
+      <view class="cancel" bindtap="cancel">取消</view>
+      <view class="confirm" bindtap="teacherSubmit">确定</view>
+    </view>
+  </view>
+</view>

@@ -1,2 +1,2 @@
-# we-imnu-srv
-We内师后端服务
+# cloudHoliday-wechat-app
+i云假微信小程序端

@@ -1,0 +1,135 @@
+/** 导航栏 **/
+.navbar-bg {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 997;
+  background: #202020;
+}
+
+.navbar-title {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  color: #fff;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+
+.navbar{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  position: fixed;
+  left: 0;
+  z-index: 999;
+}
+
+.nologin{
+  width: 100%;
+  color: #b1b1b1;
+  font-size: 32rpx;
+  text-align: left;
+  padding: 0 25rpx 40rpx;
+  margin: auto 0;
+}
+
+Page{
+  width: 100%;
+  background: #202020;
+  text-align: center;
+}
+.wellcome{
+  color: #fff;
+  font-size: 48rpx;
+  margin: 60rpx auto 25rpx;
+}
+.wellcome-content{
+  color: #fff;
+  font-size: 32rpx;
+  margin: 25rpx auto;
+}
+.body_bg{
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  bottom: 29%;
+}
+.body_bg image{
+  width: 80%;
+}
+.button{
+  width: 100%;
+  font-size: 34rpx;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 150rpx;
+  justify-content: center;
+}
+.register{
+  width: 40%;
+  background: #1f59d6;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+.register button{
+  width: 100%;
+  color: #fff;
+  line-height: 60rpx;
+  padding: 20rpx 0;
+  background: #1f59d6;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+.login{
+  width: 40%;
+  background: #5297f7;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.login button{
+  width: 100%;
+  color: #fff;
+  line-height: 60rpx;
+  padding: 20rpx 0;
+  background: #5297f7;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+button::after{
+  border: none;
+}
+
+/** 用户协议及Copyright **/
+.agreement{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 85rpx;
+  justify-content: center;
+}
+.agreement .normal{
+  font-size: 25rpx;
+  color: #fff;
+}
+.agreement .blue{
+  font-size: 25rpx;
+  color: #296aca;
+}
+.copyright{
+  width: 100%;
+  color: #fff;
+  font-size: 22rpx;
+  position: absolute;
+  bottom: 35rpx;
+  justify-content: center;
+}

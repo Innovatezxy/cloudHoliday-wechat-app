@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/my/more",
+    "pages/routers/wellcome/wellcome",
+    "pages/routers/wellcome/register",
+    "pages/routers/protocol/protocol",
+    "pages/routers/ask/ask",
+    "pages/routers/onekey/onekey",
+    "pages/routers/self/self",
+    "pages/routers/admin/admin",
+    "pages/routers/others/others",
+    "pages/routers/others/help",
+    "pages/routers/others/about",
+    "pages/routers/others/updatelog"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "云假",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#5297f7",
+    "backgroundColor": "#f0f0f0",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_c.png"
+      },
+      {
+        "pagePath": "pages/my/more",
+        "text": "我的",
+        "iconPath": "images/home_my.png",
+        "selectedIconPath": "images/home_my_c.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
